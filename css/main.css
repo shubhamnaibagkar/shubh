@@ -1,0 +1,1397 @@
+/**
+* Template Name: Lonely
+* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  /* CHANGED: Updated font stack to Helvetica system */
+  --default-font: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif;
+  --heading-font: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif;
+  --nav-font: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff;
+  --default-color: #374151;
+  --heading-color: #111827;
+  --accent-color: #2563eb;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+  
+  /* ADDED: New color variables for enhanced styling */
+  --accent-hover: #1d4ed8;
+  --accent-active: #1e40af;
+  --surface-hover: #f8fafc;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Nav Menu Colors */
+:root {
+  --nav-color: #374151;
+  --nav-hover-color: #2563eb;
+  --nav-mobile-background-color: #ffffff;
+  --nav-dropdown-background-color: #ffffff;
+  --nav-dropdown-color: #374151;
+  --nav-dropdown-hover-color: #2563eb;
+}
+
+/* Color Presets */
+.light-background {
+  --background-color: #f8fafc;
+  --surface-color: #ffffff;
+}
+
+.dark-background {
+  --background-color: #111827;
+  --default-color: #f9fafb;
+  --heading-color: #ffffff;
+  --surface-color: #1f2937;
+  --contrast-color: #ffffff;
+  --border-color: #374151;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+/* CHANGED: Completely restyled links with distinct states */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  border-bottom-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+a:active {
+  color: var(--accent-active);
+  border-bottom-color: var(--accent-active);
+  transform: translateY(0);
+}
+
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/*--------------------------------------------------------------
+# Redefined Typography Styles
+--------------------------------------------------------------*/
+
+/* CHANGED: Completely redefined typography hierarchy with Helvetica stack */
+/* Base paragraph styles */
+p {
+  font-family: var(--default-font);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  color: var(--default-color);
+}
+
+/* Heading 1 Styles - Dominant and authoritative */
+h1 {
+  font-family: var(--heading-font);
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem 0;
+  color: var(--heading-color);
+}
+
+/* Heading 2 Styles - Strong but less dominant than h1 */
+h2 {
+  font-family: var(--heading-font);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.5rem 0;
+  color: var(--heading-color);
+}
+
+/* Heading 3 Styles - Clear hierarchy from h2 */
+h3 {
+  font-family: var(--heading-font);
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem 0;
+  color: var(--heading-color);
+}
+
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.4;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.5;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/*--------------------------------------------------------------
+# Enhanced Button Styles
+--------------------------------------------------------------*/
+
+/* CHANGED: Completely restyled buttons with distinct states */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-family: var(--default-font);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:active {
+  background-color: var(--accent-active);
+  border-color: var(--accent-active);
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.btn-secondary:active {
+  background-color: var(--accent-active);
+  border-color: var(--accent-active);
+  transform: translateY(0);
+}
+
+/*--------------------------------------------------------------
+# Consistent Spacing Scale
+--------------------------------------------------------------*/
+
+/* ADDED: Consistent spacing scale */
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+}
+
+/*--------------------------------------------------------------
+# Enhanced Content Blocks
+--------------------------------------------------------------*/
+
+/* CHANGED: Restyled content blocks with consistent borders, radius, and shadows */
+.content-block {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px var(--shadow-color);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  transition: all 0.3s ease;
+}
+
+.content-block:hover {
+  box-shadow: 0 8px 30px var(--shadow-color);
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px var(--shadow-color);
+  transform: translateY(-4px);
+}
+
+.surface-elevated {
+  background: var(--surface-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px var(--shadow-color);
+  padding: var(--space-xl);
+}
+
+/*--------------------------------------------------------------
+# PHP Email Form Messages
+--------------------------------------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #dc2626;
+  color: #ffffff;
+  text-align: left;
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-md) 0;
+  transition: all 0.5s;
+  z-index: 997;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 32px;
+  margin-right: var(--space-xs);
+}
+
+.header .logo h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.scrolled .header {
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Navmenu - Desktop */
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    /* CHANGED: Applied consistent spacing */
+    padding: var(--space-sm) var(--space-md);
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: var(--space-xs);
+    transition: 0.3s;
+  }
+
+  .navmenu li:last-child a {
+    padding-right: 0;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+    background-color: var(--surface-hover);
+  }
+
+  .navmenu .dropdown ul {
+    margin: var(--space-xs) 0 0 0;
+    padding: var(--space-sm);
+    background: var(--nav-dropdown-background-color);
+    display: block;
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    z-index: 99;
+    box-shadow: 0 20px 40px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    min-width: 220px;
+  }
+
+  .navmenu .dropdown ul li {
+    min-width: 200px;
+  }
+
+  .navmenu .dropdown ul a {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 15px;
+    text-transform: none;
+    color: var(--nav-dropdown-color);
+    border-radius: 6px;
+    margin: 2px 0;
+  }
+
+  .navmenu .dropdown ul a i {
+    font-size: 12px;
+  }
+
+  .navmenu .dropdown ul a:hover,
+  .navmenu .dropdown ul .active:hover,
+  .navmenu .dropdown ul li:hover>a {
+    color: var(--nav-dropdown-hover-color);
+    background-color: var(--surface-hover);
+  }
+
+  .navmenu .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: -90%;
+    visibility: hidden;
+  }
+
+  .navmenu .dropdown .dropdown:hover>ul {
+    opacity: 1;
+    top: 0;
+    left: -100%;
+    visibility: visible;
+  }
+}
+
+/* Navmenu - Mobile */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: var(--space-sm);
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: var(--space-md) 0;
+    margin: 0;
+    border-radius: 16px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0 20px 40px var(--shadow-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: var(--space-sm) var(--space-lg);
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+    border-radius: 8px;
+    margin: 2px var(--space-md);
+  }
+
+  .navmenu a i,
+  .navmenu a:focus i {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: var(--space-xs);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  }
+
+  .navmenu a i:hover,
+  .navmenu a:focus i:hover {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+    background-color: var(--surface-hover);
+  }
+
+  .navmenu .active i,
+  .navmenu .active:focus i {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    transform: rotate(180deg);
+  }
+
+  .navmenu .dropdown ul {
+    position: static;
+    display: none;
+    z-index: 99;
+    padding: var(--space-sm);
+    margin: var(--space-sm) var(--space-lg);
+    background-color: var(--nav-dropdown-background-color);
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+    transition: all 0.5s ease-in-out;
+    border-radius: 12px;
+  }
+
+  .navmenu .dropdown ul ul {
+    background-color: rgba(33, 37, 41, 0.1);
+  }
+
+  .navmenu .dropdown>.dropdown-active {
+    display: block;
+    background-color: var(--surface-hover);
+  }
+
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    position: absolute;
+    font-size: 32px;
+    top: var(--space-md);
+    right: var(--space-md);
+    margin-right: 0;
+    z-index: 9999;
+  }
+
+  .mobile-nav-active .navmenu {
+    position: fixed;
+    overflow: hidden;
+    inset: 0;
+    background: rgba(33, 37, 41, 0.8);
+    transition: 0.3s;
+  }
+
+  .mobile-nav-active .navmenu>ul {
+    display: block;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Footer
+--------------------------------------------------------------*/
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: 14px;
+  text-align: center;
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-xl) 0;
+  position: relative;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding: 0;
+  margin: 0 0 var(--space-md) 0;
+}
+
+.footer p {
+  font-size: 15px;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.footer .social-links {
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.footer .social-links a {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  line-height: 1;
+  margin: 0 var(--space-xs);
+  border-radius: 50%;
+  text-align: center;
+  width: 44px;
+  height: 44px;
+  transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.footer .copyright {
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer .credits {
+  font-size: 13px;
+  padding-top: var(--space-xs);
+}
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  background: var(--background-color);
+  transition: all 0.6s ease-out;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #ffffff;
+  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1.5s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: var(--space-md);
+  bottom: var(--space-md);
+  z-index: 99999;
+  background-color: var(--accent-color);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--contrast-color);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Disable aos animation delay on mobile devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-xl) 0;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.page-title .breadcrumbs ol li+li {
+  padding-left: var(--space-sm);
+}
+
+.page-title .breadcrumbs ol li+li::before {
+  content: "/";
+  display: inline-block;
+  padding-right: var(--space-sm);
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  /* CHANGED: Applied consistent spacing scale */
+  padding: var(--space-3xl) 0;
+  scroll-margin-top: 90px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+  section,
+  .section {
+    scroll-margin-top: 66px;
+    padding: var(--space-2xl) 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  /* CHANGED: Applied consistent spacing */
+  padding-bottom: var(--space-3xl);
+  position: relative;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+  position: relative;
+}
+
+.section-title h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  font-size: 1.125rem;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  background: url(../img/background.jpg) top center no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-3xl) 0 var(--space-2xl) 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero:before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 90%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero p {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  margin: var(--space-sm) 0 0 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+}
+
+.hero .btn-scroll {
+  transition: 0.4s;
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  display: block;
+  margin-top: var(--space-xl);
+  animation: btn-up-down 1s ease-in-out infinite alternate-reverse both;
+}
+
+.hero .btn-scroll i {
+  font-size: 48px;
+}
+
+.hero .btn-scroll:hover {
+  color: var(--accent-color);
+}
+
+@keyframes btn-up-down {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+/*--------------------------------------------------------------
+# About Section - Enhanced with new styling
+--------------------------------------------------------------*/
+.about {
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-3xl) 0;
+}
+
+.about .content {
+  /* ADDED: Enhanced content block styling */
+  background: var(--surface-color);
+  border-radius: 16px;
+  padding: var(--space-2xl);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+}
+
+.about .content h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: var(--space-lg);
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  padding: var(--space-sm);
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.about .content ul li:hover {
+  background-color: var(--surface-hover);
+}
+
+.about .content ul strong {
+  margin-right: var(--space-sm);
+  min-width: 120px;
+}
+
+.about .content ul i {
+  font-size: 16px;
+  margin-right: var(--space-xs);
+  color: var(--accent-color);
+  line-height: 0;
+}
+
+/*--------------------------------------------------------------
+# Skills Section - Enhanced with new styling
+--------------------------------------------------------------*/
+.skills {
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-3xl) 0;
+}
+
+.skills .progress {
+  height: 60px;
+  display: block;
+  background: none;
+  border-radius: 0;
+}
+
+.skills .progress .skill {
+  color: var(--heading-color);
+  padding: 0;
+  margin: 0 0 var(--space-xs) 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: var(--heading-font);
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.skills .progress-bar {
+  width: 1px;
+  height: 12px;
+  transition: 0.9s;
+  background-color: var(--accent-color);
+  border-radius: 6px;
+}
+
+/*--------------------------------------------------------------
+# Services Section - Enhanced with new styling
+--------------------------------------------------------------*/
+.services {
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-3xl) 0;
+}
+
+.services .service-item {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  padding: var(--space-2xl);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.services .service-item:before {
+  content: "";
+  position: absolute;
+  background: var(--accent-color);
+  inset: 100% 0 0 0;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.services .service-item .icon {
+  margin-bottom: var(--space-lg);
+}
+
+.services .service-item .icon i {
+  color: var(--accent-color);
+  font-size: 48px;
+  transition: ease-in-out 0.3s;
+}
+
+.services .service-item h4 {
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+}
+
+.services .service-item h4 a {
+  color: var(--heading-color);
+  transition: ease-in-out 0.3s;
+}
+
+.services .service-item p {
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 0;
+  transition: ease-in-out 0.3s;
+}
+
+.services .service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.services .service-item:hover h4 a,
+.services .service-item:hover .icon i,
+.services .service-item:hover p {
+  color: var(--contrast-color);
+}
+
+.services .service-item:hover:before {
+  background: var(--accent-color);
+  inset: 0;
+  border-radius: 16px;
+}
+
+/*--------------------------------------------------------------
+# Contact Section - Enhanced with new styling
+--------------------------------------------------------------*/
+.contact {
+  /* CHANGED: Applied consistent spacing */
+  padding: var(--space-3xl) 0;
+}
+
+.contact .info-item+.info-item {
+  margin-top: var(--space-xl);
+}
+
+.contact .info-item {
+  /* ADDED: Enhanced info item styling */
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  transition: all 0.3s ease;
+}
+
+.contact .info-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.contact .info-item i {
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  margin-right: var(--space-md);
+}
+
+.contact .info-item h3 {
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.contact .info-item:hover i {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  transform: scale(1.1);
+}
+
+.contact .php-email-form {
+  height: 100%;
+  /* ADDED: Enhanced form styling */
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: var(--space-2xl);
+  box-shadow: 0 4px 20px var(--shadow-color);
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 16px;
+  padding: var(--space-md);
+  box-shadow: none;
+  border-radius: 8px;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 80%);
+  outline: none;
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: var(--space-md) var(--space-xl);
+  transition: 0.4s;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio .portfolio-filters {
+  padding: 0;
+  margin: 0 auto var(--space-lg) auto;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio .portfolio-filters li {
+  background-color: var(--surface-color);
+  cursor: pointer;
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  margin: 0 var(--space-xs);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid var(--border-color);
+}
+
+.portfolio .portfolio-filters li:hover,
+.portfolio .portfolio-filters li.filter-active {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.portfolio .portfolio-filters li:first-child {
+  margin-left: 0;
+}
+
+.portfolio .portfolio-filters li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 575px) {
+  .portfolio .portfolio-filters li {
+    font-size: 14px;
+    margin: 0 0 var(--space-sm) 0;
+  }
+}
+
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  left: var(--space-md);
+  right: var(--space-md);
+  bottom: -100%;
+  z-index: 3;
+  transition: all ease-in-out 0.5s;
+  background: color-mix(in srgb, var(--surface-color), transparent 10%);
+  backdrop-filter: blur(10px);
+  padding: var(--space-lg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 14px;
+  margin-bottom: 0;
+  padding-right: 50px;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link,
+.portfolio .portfolio-item .portfolio-info .details-link {
+  position: absolute;
+  right: 50px;
+  font-size: 24px;
+  top: calc(50% - 14px);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info .preview-link:hover,
+.portfolio .portfolio-item .portfolio-info .details-link:hover {
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-item .portfolio-info .details-link {
+  right: var(--space-md);
+  font-size: 28px;
+}
+
+.portfolio .portfolio-item:hover .portfolio-info {
+  opacity: 1;
+  bottom: var(--space-md);
+}
+
+/*--------------------------------------------------------------
+# Starter Section Section
+--------------------------------------------------------------*/
+.starter-section {
+  /* ADDED: Enhanced starter section with consistent spacing */
+  padding: var(--space-3xl) 0;
+}
+
+.starter-section .content-block {
+  margin-bottom: var(--space-xl);
+}
